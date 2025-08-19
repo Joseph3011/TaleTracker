@@ -14,12 +14,17 @@ const AddBookModal = ({ isOpen, onClose, onSave, editingBook }) => {
       setGenre(editingBook.genre);
       setStatus(editingBook.status);
     } else {
-      setTitle("");
-      setAuthor("");
-      setGenre("");
-      setStatus("Not Started");
+      resetForm();
     }
   }, [editingBook]);
+
+  // Reset form fields
+  const resetForm = () => {
+    setTitle("");
+    setAuthor("");
+    setGenre("");
+    setStatus("Not Started");
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,8 +37,8 @@ const AddBookModal = ({ isOpen, onClose, onSave, editingBook }) => {
       status,
     });
 
-    onClose();
     resetForm();
+    onClose();
   };
 
   if (!isOpen) return null;
@@ -97,7 +102,10 @@ const AddBookModal = ({ isOpen, onClose, onSave, editingBook }) => {
         </form>
 
         <button
-          onClick={onClose}
+          onClick={() => {
+            resetForm();
+            onClose();
+          }}
           className="mt-3 w-full bg-gray-200 py-2 rounded-lg hover:bg-gray-300"
         >
           Cancel

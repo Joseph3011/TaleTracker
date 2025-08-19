@@ -2,11 +2,9 @@ import Book from "../models/Book.js";
 
 export const addBook = async (req, res) => {
   try {
-    const { title, author, genre } = req.body;   
+    const { title, author, status, genre} = req.body;   
     const newBook = new Book({ 
-      title, 
-      author, 
-      genre, 
+      title, author, status, genre, 
       user: req.user.id 
     });
     await newBook.save();
