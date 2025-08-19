@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./server
+    container_name: taletracker-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./server/.env
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    command: ["node", "server.js"]
+
+  frontend:
+    build: ./client
+    container_name: taletracker-frontend
+    ports:
+      - "5137:5137"
+    depends_on:
+      - backend
+    environment:
+      # Improves file change detection in some mac setups
+      CHOKIDAR_USEPOLLING: "true"
+      WATCHPACK_POLLING: "true"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    command: ["npm", "run", "dev", "--", "--host", "--port", "5137"]
