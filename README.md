@@ -28,7 +28,8 @@ TaleTracker is a simple React-based Book Tracker app with authentication, book m
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/taletrackeer.git
+git clone https://github.com/Joseph3011/TaleTracker.git
+
 cd taletrackeer
 ```
 
