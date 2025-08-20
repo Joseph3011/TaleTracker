@@ -5,7 +5,7 @@ services:
     build: ./server
     container_name: taletracker-backend
     ports:
-      - "5000:5000"
+      - "3000:3000"
     env_file:
       - ./server/.env
     volumes:
