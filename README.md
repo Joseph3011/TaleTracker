@@ -1,4 +1,4 @@
-# TaleTracker
+# 📚TaleTracker
 TaleTracker is a simple React-based Book Tracker app with authentication, book management, and a modern Tailwind CSS interface. Users can signup, login, and manage their book collection by adding, updating, and deleting books.
 
 # Features
