@@ -18,7 +18,6 @@ const AddBookModal = ({ isOpen, onClose, onSave, editingBook }) => {
     }
   }, [editingBook]);
 
-  // Reset form fields
   const resetForm = () => {
     setTitle("");
     setAuthor("");
@@ -30,7 +29,7 @@ const AddBookModal = ({ isOpen, onClose, onSave, editingBook }) => {
     e.preventDefault();
 
     onSave({
-      _id: editingBook ? editingBook._id : null, // handle MongoDB _id
+      _id: editingBook ? editingBook._id : null,
       title,
       author,
       genre,
@@ -89,7 +88,7 @@ const AddBookModal = ({ isOpen, onClose, onSave, editingBook }) => {
             required
           >
             <option>Not Started</option>
-            <option>Reading</option>
+            <option>In Progress</option>
             <option>Completed</option>
           </select>
 
