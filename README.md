@@ -35,6 +35,7 @@ npm install
 
 # Start the frontend
 npm run dev
+```
 
 ```bash
 # Navigate to the server folder
