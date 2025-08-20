@@ -5,7 +5,7 @@ const bookSchema = new mongoose.Schema({
   author: { type: String, required: true },
   status: {
     type: String,
-    enum: ["Not Started", "In Progress", "Completed"], // match frontend
+    enum: ["Not Started", "In Progress", "Completed"], 
     default: "Not Started",
   },
   genre: { type: String, required: true },
